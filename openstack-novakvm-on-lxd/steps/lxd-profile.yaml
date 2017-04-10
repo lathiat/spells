@@ -12,15 +12,18 @@ devices:
     mtu: "9000"
     name: eth0
     nictype: bridged
-    parent: lxdbr0
+    parent: vsw4
     type: nic
   eth1:
     mtu: "9000"
     name: eth1
     nictype: bridged
-    parent: conjureup0
+    parent: vsw3
     type: nic
   root:
     path: /
-    pool: default
+    pool: nvme
     type: disk
+  /dev/kvm:
+    path: /dev/kvm
+    type: unix-char
